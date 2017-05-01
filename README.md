@@ -9,3 +9,4 @@ This is a simple HTML Canvas project where a line starts from the center of the 
  
 ## Live Version
 
+https://bgabor91.github.io/paintball/
