@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by bgabor91 (http://jsbin.com/wowocip/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Paintball">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Practice JavaScript by drawing</title>
+</head>
+<body>
+  <button onclick="clearInterval(myLines)" style="float:left">Stop drawing lines</button>
+  <canvas id="myCanvas" height="700" width="1100" style="border: 1px solid black"></canvas>
+
+<script id="jsbin-javascript">
+var myLines = setInterval(myDrawing,300);
+
+function myDrawing(){
+  
+  var c = document.getElementById('myCanvas').getContext('2d');
+
+var maxA = c.canvas.width;
+var maxB = c.canvas.height;
+var min = 0;
+
+  
+function lineToCenter(){
+    var r = Math.floor(Math.random()*255);
+   var g =  Math.floor(Math.random()*255);
+   var b =  Math.floor(Math.random()*255);
+   var centerX = c.canvas.width/2;
+   var centerY = c.canvas.height/2;
+  
+  for (var i= 0; i<2; i++) {
+   
+    c.beginPath();
+    c.moveTo(centerX,centerY);
+    c.arc(maxA*Math.random(),maxB*Math.random(),3,0,2*Math.PI);
+    c.fillStyle = 'rgba('+ r +', '+ g +', '+b+',0.5)';
+    c.strokeStyle= 'rgba('+ r +', '+ g +', '+b+',0.5)';
+    c.stroke();
+    c.fill();
+    
+    
+  }
+}
+lineToCenter();
+}
+
+
+</script>
+</body>
+</html>
